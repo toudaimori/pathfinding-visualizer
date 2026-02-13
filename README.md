@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# 🚀 Pathfinding Visualizer: An Interactive Algorithm Sandbox
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A high-performance, interactive web application designed to visualize classic pathfinding algorithms in real-time. Built with a focus on clean architecture and smooth user experience.
 
-Currently, two official plugins are available:
+### 🔗 [Live Demo: Experience the Visualization Here](https://toudaimori.github.io/pathfinding-visualizer/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Interactive Grid System**: A 20x40 dynamic grid where users can draw walls and obstacles in real-time.
+* **Drag-and-Drop Nodes**: Intuitive manipulation of "Start" and "Target" points.
+* **Dual Algorithm Support**:
+* **Dijkstra's Algorithm**: The father of pathfinding; guarantees the shortest path.
+* **A* (A-Star) Search**: An optimized heuristic-based search that finds the path significantly faster.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Procedural Maze Generation**: Implements the **Recursive Division** algorithm to generate complex, solvable mazes instantly.
+* **Real-time Speed Control**: Adjust the visualization tempo from 1ms to 50ms to study algorithm behavior in detail.
+* **Responsive & Modern UI**: A sleek dark-mode aesthetic built with Tailwind CSS v4.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧠 Algorithms Explored
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Algorithm | Type | Description |
+| --- | --- | --- |
+| **Dijkstra** | Uninformed | Explores all directions equally. Guarantees the shortest path. |
+| **A* (A-Star)** | Informed | Uses heuristics to prioritize nodes closer to the goal. Much faster than Dijkstra. |
+| **Recursive Division** | Maze Gen | A "divide and conquer" approach to creating wall patterns. |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Technical Implementation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project follows **Clean Architecture** principles to ensure the code is maintainable and scalable:
+
+1. **Logic-UI Separation**: Algorithm logic (Dijkstra, A*, Maze) is strictly decoupled from React components, allowing for easy testing and updates.
+2. **Efficient State Updates**: Optimized React state management to handle high-frequency grid updates during animations without sacrificing 60fps performance.
+3. **Type Safety**: 100% TypeScript implementation for robust data structures and bug prevention.
+
+---
+
+## 🚀 Getting Started
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository:**
+
+  ```bash
+  git clone https://github.com/toudaimori/pathfinding-visualizer.git
+  ```
+
+2. **Install dependencies:**
+
+  ```bash
+  npm install
+  ```
+
+
+3. **Launch the development server:**
+
+  ```bash
+  npm run dev
+  ```
+
+---
+
+## 📝 License
+
+This project is open-source and available under the MIT License.
